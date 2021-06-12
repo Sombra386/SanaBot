@@ -1,7 +1,7 @@
 ﻿const Discord = require('discord.js');
 const client = new Discord.Client();
 
-client.login('ODI5NzU5NzA5NDA5MTgxNzA2.YG8z8g.HL9azBrq7nEp-naPhECLnkIvyvI');
+client.login('ODI5NzU5NzA5NDA5MTgxNzA2.YG8z8g.fwOwks1NWDidpMX4auyMQlsWfIg');
 
 client.on('ready', () => {
 	console.log(`${client.user.tag} is ON`);
