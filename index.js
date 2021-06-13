@@ -1,7 +1,8 @@
-﻿const Discord = require('discord.js');
+﻿require('dotenv').config();
+const Discord = require('discord.js');
 const client = new Discord.Client();
 
-client.login('ODI5NzU5NzA5NDA5MTgxNzA2.YG8z8g.fwOwks1NWDidpMX4auyMQlsWfIg');
+client.login(process.env.DISCORD_TOKEN);
 
 client.on('ready', () => {
 	console.log(`${client.user.tag} is ON`);
