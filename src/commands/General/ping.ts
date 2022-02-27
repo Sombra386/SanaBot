@@ -1,14 +1,14 @@
 import { ApplyOptions } from '@sapphire/decorators';
 import { Command, CommandOptions } from '@sapphire/framework';
 import { send } from '@sapphire/plugin-editable-commands';
-import type { Message } from 'discord.js';
+import type { CommandInteraction, Message } from 'discord.js';
 
 @ApplyOptions<CommandOptions>({
 	description: 'ping pong',
 	chatInputApplicationOptions: {
 		name: 'ping',
 		description: 'Test if the bot is alive',
-		guildIds: [ process.env.TEST_GUILD_ID ]
+		guildIds: [ process.env.TEST_GUILD_ID as string ]
 	}
 })
 export class UserCommand extends Command {
@@ -20,5 +20,9 @@ export class UserCommand extends Command {
 		}ms.`;
 
 		return send(message, content);
+	}
+
+	public async chatInputApplicationRun(interaction: CommandInteraction) {
+		await interaction.reply('Pong!');
 	}
 }
