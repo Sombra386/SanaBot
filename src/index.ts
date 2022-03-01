@@ -2,6 +2,9 @@ import './lib/setup';
 import { LogLevel, SapphireClient } from '@sapphire/framework';
 
 const client = new SapphireClient({
+	applicationCommandsHintProvider: () => {
+		return process.env.TEST_GUILD_ID ? { guildIds: [ process.env.TEST_GUILD_ID ] } : null
+	},
 	defaultPrefix: '!',
 	regexPrefix: /^(hey +)?bot[,! ]/i,
 	caseInsensitiveCommands: true,

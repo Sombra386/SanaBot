@@ -4,12 +4,9 @@ import { send } from '@sapphire/plugin-editable-commands';
 import type { CommandInteraction, Message } from 'discord.js';
 
 @ApplyOptions<CommandOptions>({
+	name: 'ping',
 	description: 'ping pong',
-	chatInputApplicationOptions: {
-		name: 'ping',
-		description: 'Test if the bot is alive',
-		guildIds: [ process.env.TEST_GUILD_ID as string ]
-	}
+	chatInputApplicationOptions: {}
 })
 export class UserCommand extends Command {
 	public async messageRun(message: Message) {
