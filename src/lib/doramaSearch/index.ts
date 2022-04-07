@@ -1,11 +1,9 @@
-import { DoramasMP4 } from './sites/DoramasMP4';
 import { Pandrama } from './sites/Pandrama';
 import { Viki } from './sites/Viki';
 
 export class DoramaSearch {
   public static async unifiedSearch(query: string) {
     const providers: IProvider[] = [
-      DoramasMP4,
       Pandrama,
       Viki
     ];
